@@ -11,13 +11,7 @@
   </head>
 
   <body>
-    <% flash.each do |type, message| %>
-      <p class="notice">
-        <%= message %>
-      </p>
-
-    <% end %>
+    <%= render 'layouts/messages' %>
     <%= yield %>
-    <%= javascript_include_tag "turbo", type: "module" %>
   </body>
 </html>

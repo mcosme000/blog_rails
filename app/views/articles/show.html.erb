@@ -3,4 +3,6 @@
 <p><strong>Title: </strong><%= @article.title %></p>
 <p><strong>Description: </strong><%= @article.description %></p>
 
+<%= link_to "Edit article", edit_article_path(@article) %> |
+<%= link_to "Delete article", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> |
 <%= link_to "Go back to Articles", articles_path %>
