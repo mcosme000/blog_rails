@@ -1,5 +1,7 @@
-<h1>Edit article</h1>
+<div class="container mt-5">
 
-<%= render 'articles/form' %>
+  <h1>Edit article</h1>
+  <%= render 'articles/form' %>
+  <%= link_to "Go back", article_path(@article) %>
 
-<%= link_to "Go back", article_path(@article) %>
+</div>
