@@ -1,0 +1,14 @@
+.footer {
+  background: rgb(208, 208, 208);
+  position: sticky;
+  bottom: 0;
+}
+
+.footer ul {
+  padding: 0;
+}
+
+.footer ul li {
+  list-style: none;
+  display: inline-block;
+}

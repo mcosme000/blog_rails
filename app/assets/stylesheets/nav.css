@@ -1,0 +1,19 @@
+.navbar .nav-li {
+  color: black;
+  text-decoration: none;
+  margin-right: 30px;
+}
+
+.navbar .logo {
+  font-size: 20px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar .form-control {
+  border-radius: 0px;
+  border: none;
+  border-bottom: 0.1px solid grey;
+}
