@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = 'Article was successfully created'
       redirect_to article_path(@article)
     else
-      render 'new'
+      render 'new', status: :unprocessable_entity
       # So I can use @article in new because I'm rendering
       # it from the create method!
     end
