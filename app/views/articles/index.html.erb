@@ -9,13 +9,9 @@
         <img src="" alt="">
         <div class="article-content">
           <h3><%= article.title %></h3>
-          <p><%= article.description %></p>
         </div>
-        <%= link_to "Read more", article_path(article), class: "btn-underline"%>
+        <%= link_to "Read more", article_path(article), class: "btn-small btn-underline"%>
       </div>
     <% end %>
   </div>
-
-  <%= link_to "Create a new article", new_article_path, class: "btn-retro"%>
-
 </div>

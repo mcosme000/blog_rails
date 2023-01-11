@@ -1,7 +1,25 @@
+
+.small-container {
+  width: 600px;
+  margin: 0 auto;
+}
+
 p {
   margin-bottom: 0px;
 }
 
 a {
   text-decoration: none;
+}
+
+@media(max-width: 992px) {
+  .small-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .small-container {
+    width: 80%;
+  }
 }

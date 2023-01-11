@@ -1,3 +1,10 @@
+.navbar {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  box-shadow: 1px 1px 1px #000;
+}
+
 .navbar .nav-li {
   color: black;
   text-decoration: none;
@@ -6,6 +13,7 @@
 
 .navbar .logo {
   font-size: 20px;
+  font-weight: bold;
 }
 
 .navbar-toggler {

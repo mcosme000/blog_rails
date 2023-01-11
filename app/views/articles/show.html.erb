@@ -1,12 +1,21 @@
-<div class="container mt-5">
+<div class="article-show">
+  <div class="article-banner" style="background-color: <%= @colors.sample %>">
+    <div class="container text-center">
+      <h1 class="title"><%= @article.title %></h1>
+      <p>--<%= @article.user.username %></p>
+    </div>
 
-  <h1>Showing article details</h1>
-
-  <p><strong>Title: </strong><%= @article.title %></p>
-  <p><strong>Description: </strong><%= @article.description %></p>
-
-  <%= link_to "Edit article", edit_article_path(@article) %> |
-  <%= link_to "Delete article", article_path(@article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> |
-  <%= link_to "Go back to Articles", articles_path %>
-
+  </div>
+  <div class="small-container mt-5 bg-white">
+    <p>
+      <i class="fa fa-solid fa fa-arrow-left"></i>
+      <%= link_to "Go back to Articles", articles_path, class: "btn-small" %>
+    </p>
+    <%= link_to "Edit article", edit_article_path(@article), class: "btn-small" %> |
+    <%= link_to "Delete article", article_path(@article),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "btn-small text-danger" %>
+    <hr>
+    <p><%= @article.description %></p>
+  </div>
 </div>

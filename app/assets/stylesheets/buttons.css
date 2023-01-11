@@ -12,6 +12,10 @@
   display: inline-block;
 }
 
+.green {
+  background: rgb(61, 135, 15);
+}
+
 .btn-retro:hover {
   background: rgb(236, 236, 236);
 }
@@ -21,13 +25,16 @@
   box-shadow: none;
 }
 
-.btn-underline {
-  color: #000;
+.btn-small {
+  color: rgb(0, 0, 0);
   font-weight: bold;
   font-size: 12px;
   border: none;
   margin-top: 10px;
   padding-bottom: 5px;
+}
+
+.btn-underline {
   border-bottom: 1px solid #000;
   display: inline;
 }

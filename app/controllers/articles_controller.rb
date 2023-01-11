@@ -6,7 +6,9 @@ class ArticlesController < ApplicationController
     @colors = ['#0476f1', '#cbbada', '#e7e5e6', '#f4c524']
   end
 
-  def show; end
+  def show
+    @colors = ['#0476f1', '#cbbada', '#e7e5e6', '#f4c524']
+  end
 
   def new
     @article = Article.new

@@ -1,7 +1,9 @@
 .footer {
-  background: rgb(208, 208, 208);
+  background: rgb(0, 0, 0);
   position: sticky;
   bottom: 0;
+  color: #fff;
+  font-size: 14px;
 }
 
 .footer ul {
