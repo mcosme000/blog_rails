@@ -1,5 +1,7 @@
-<%= simple_form_for @article do |f| %>
-  <%= f.input :title, label: "Title" %>
-  <%= f.input :description, label: "Description" %>
-  <%= f.button :submit, class: "btn btn-success" %>
-<% end %>
+<div class="form create-article mt-3">
+  <%= simple_form_for @article do |f| %>
+    <%= f.input :title, label: "Title" %>
+    <%= f.input :description, label: "Description" %>
+    <%= f.button :submit, class: "btn-sharp" %>
+  <% end %>
+</div>

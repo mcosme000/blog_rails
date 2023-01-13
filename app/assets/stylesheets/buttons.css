@@ -20,3 +20,25 @@
   border-radius: 3px;
   transition: ease-in-out, 0.3s;
 }
+
+.btn-sharp:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* - - - */
+
+.social-buttons {
+  list-style: none;
+}
+
+.social-buttons {
+  text-align: center;
+  background: rgb(225, 225, 225);
+  padding: 20px 0px;
+}
+
+.social-buttons li {
+  font-size: 20px;
+  margin: 0px 15px;
+}

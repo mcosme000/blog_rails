@@ -1,7 +1,5 @@
 <div class="container mt-5">
-
-  <h1>Edit article</h1>
+  <%= link_to "Go back", article_path(@article), class: "btn-small btn-underline" %>
+  <h1 class="mt-3">Edit article</h1>
   <%= render 'articles/form' %>
-  <%= link_to "Go back", article_path(@article) %>
-
 </div>
