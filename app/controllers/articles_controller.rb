@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
     @article.user_id = User.first.id
     if @article.save
       flash[:notice] = 'Article was successfully created'
-      redirect_to article_path(@article)
+      redirect_to articles_path
     else
       render 'new', status: :unprocessable_entity
       # So I can use @article in new because I'm rendering
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   def update
     if @article.update(article_params)
       flash[:notice] = 'Article was updated successfully'
-      redirect_to @article
+      redirect_to articles_path(@article)
     else
       render 'edit'
     end
