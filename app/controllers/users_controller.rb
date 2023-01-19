@@ -13,6 +13,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def index
+    @users = User.all
+  end
+
   def show
     @user = User.find(params[:id])
     @colors = ['#0476f1', '#cbbada', '#e7e5e6', '#f4c524']
@@ -25,8 +29,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "Hey #{@user.username} your account was successfully updated"
-      redirect_to articles_path
+      flash[:notice] = "Hey #{@user.username}, your account was successfully updated"
+      redirect_to user_path(@user)
     else
       render :edit
     end
@@ -35,6 +39,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :email, :password_digest)
+    params.require(:user).permit(:username, :email, :password_digest, :photo)
   end
 end

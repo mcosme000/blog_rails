@@ -26,6 +26,10 @@
   color: #fff;
 }
 
+.block {
+  display: block;
+}
+
 /* - - - */
 
 .social-buttons {
@@ -33,12 +37,10 @@
 }
 
 .social-buttons {
-  text-align: center;
-  background: rgb(225, 225, 225);
-  padding: 20px 0px;
+  padding: 5px 0px;
 }
 
 .social-buttons li {
-  font-size: 20px;
+  font-size: 16px;
   margin: 0px 15px;
 }
