@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
   before_save { self.email = email.downcase }
 
   has_many :articles
@@ -13,6 +18,4 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     length: { maximum: 105 },
                     format: { with: VALID_EMAIL_REGEX }
-  validates :password_digest, presence: true
-  has_secure_password
 end
