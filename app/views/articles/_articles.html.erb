@@ -1,0 +1,12 @@
+<div class="articles-container mt-3">
+  <% @articles.each do |article| %>
+    <div class="article d-flex flex-column justify-content-between" style="background-color: <%= @colors.sample %>">
+      <p>Created on <%= article.created_at.strftime('%m/%d/%Y') %></p>
+      <img src="" alt="">
+      <div class="article-content">
+        <h3><%= article.title %></h3>
+      </div>
+      <%= link_to "Read more", article_path(article), class: "btn-small btn-underline"%>
+    </div>
+  <% end %>
+  </div>

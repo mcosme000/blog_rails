@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page], per_page: 5)
     @colors = ['#0476f1', '#cbbada', '#e7e5e6', '#f4c524']
   end
 
