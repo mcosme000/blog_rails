@@ -2,7 +2,10 @@
   <div class="container banner-content">
     <h1>MOSHI BLOG</h1>
     <p>Where interesting minds come together</p>
-    <%= link_to "Login", new_user_session_path %>
-    <%= link_to "Logout", destroy_user_session_path %>
+    <% if user_signed_in? %>
+      <%= link_to "Write something amazing", new_article_path, class: "btn-sharp" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "btn-sharp" %>
+    <% end %>
   </div>
 </div>

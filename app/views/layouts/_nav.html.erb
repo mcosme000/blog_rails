@@ -1,25 +1,30 @@
-<nav class="navbar navbar-expand-lg py-3">
-  <div class="container-fluid container">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container container-fluid">
     <%= link_to "MOSHI BLOG", root_path, :class => "nav-li logo" %>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="black">
-          <%= link_to "Articles", articles_path, :class => "nav-li btn-small"%>
-        </li>
-        <li>
-          <%= link_to "Writers", users_path, :class => "nav-li btn-small" %>
-        </li>
-        <li class="black">
-          <%= link_to "About", about_path, :class => "nav-li btn-small"%>
-        </li>
-        <li>
-          <%= link_to "Create a new article", new_article_path, class: "btn-small"%>
-        </li>
-        
+      <ul class="navbar-nav me-auto">
+          <li class="nav-item active"><%= link_to "Articles", articles_path, :class => "nav-li btn-small mb-0"%></li>
+          <li><%= link_to "Writers", users_path, :class => "nav-li btn-small mb-0" %></li>
+          <li class="nav-item">
+            <%= link_to "Create a new article", new_article_path, class: "nav-li btn-small mb-0"%>
+          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <%= button_to 'Log out', destroy_user_session_path, method: :delete, class: "btn-sharp dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "btn-sharp" %>
+          <% end %>
       </ul>
     </div>
   </div>
-</nav>
+</div>
