@@ -1,12 +1,9 @@
 .form {
-  padding: 20px;
-  background: #E7E5E6;
+  padding: 20px 0px;
+  background: #ffffff;
+  max-width: 600px;
 }
 
 .create-article {
   max-width: 900px;
-}
-
-.signup {
-  max-width: 500px;
 }
