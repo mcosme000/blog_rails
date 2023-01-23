@@ -46,6 +46,8 @@ gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'will_paginate', '~> 3.3'
 gem 'devise'
+gem "pundit"
+
 
 # Use Sass to process CSS
 # gem "sassc-rails"
