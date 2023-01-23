@@ -1,21 +1,22 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: %i[show edit update]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @users = User.all
+    @users = policy_scope(User).all
   end
 
   def show
-    @user = User.find(params[:id])
     @colors = ['#0476f1', '#cbbada', '#e7e5e6', '#f4c524']
+    authorize @user
   end
 
   def edit
-    @user = User.find(params[:id])
+    authorize @user
   end
 
   def update
-    @user = User.find(params[:id])
+    authorize @user
     if @user.update(user_params)
       flash[:notice] = "Hey #{@user.username}, your account was successfully updated"
       redirect_to user_path(@user)
@@ -28,5 +29,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :photo)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
