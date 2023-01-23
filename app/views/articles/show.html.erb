@@ -11,10 +11,13 @@
       <i class="fa fa-solid fa fa-arrow-left"></i>
       <%= link_to "Go back to Articles", articles_path, class: "btn-small" %>
     </p>
-    <%= link_to "Edit article", edit_article_path(@article), class: "btn-small" %> |
-    <%= link_to "Delete article", article_path(@article),
+
+    <% if policy(@article).update? %>
+      <%= link_to "Edit article", edit_article_path(@article), class: "btn-small" %> |
+      <%= link_to "Delete article", article_path(@article),
         data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
         class: "btn-small text-danger" %>
+    <% end %>
     <hr>
     <p><%= @article.description %></p>
   </div>

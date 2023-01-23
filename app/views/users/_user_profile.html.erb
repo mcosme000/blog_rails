@@ -13,10 +13,13 @@
         <% else %>
           <p>No posts</p>
         <% end %>
-        <%= link_to "Edit profile", edit_user_path(@user), class: "btn-small block" %>
+        <% if policy(@user).update? %>
+          <%= link_to "Edit profile", edit_user_path(@user), class: "btn-small block" %>
+        <% end %>
       </div>
     </div>
   </div>
+
   <%# column 2%>
   <div class="col-12 col-md-5">
     <div class="col-12 border-left">
