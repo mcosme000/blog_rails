@@ -6,4 +6,7 @@
     <%= f.input :photo, as: :file %>
     <%= f.button :submit, label: (@user.new_record? ? "Signup" : "Update account"), class: "btn-sharp" %>
   <% end %>
+
+  <%= link_to "Delete my account", user_path(@user), data: { turbo_method: :delete,
+  turbo_confirm: "You will lose your account and all your articles, are you sure you want to continue?" } %>
 </div>

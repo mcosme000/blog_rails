@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
@@ -23,6 +23,13 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    authorize @user
+    @user.destroy
+    flash[:notice] = 'Account and all articles associated deleted'
+    redirect_to articles_path
   end
 
   private
