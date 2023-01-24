@@ -1,7 +1,6 @@
 <div class="container my-5">
 
   <h2>Log in</h2>
-  <p>Don't have an account? <%= link_to "Sign in", new_user_registration_path %></p>
 
   <div class="form mt-3">
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),

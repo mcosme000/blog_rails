@@ -10,9 +10,11 @@
       <ul class="navbar-nav me-auto">
           <li class="nav-item active"><%= link_to "Articles", articles_path, :class => "nav-li btn-small mb-0"%></li>
           <li><%= link_to "Writers", users_path, :class => "nav-li btn-small mb-0" %></li>
-          <li class="nav-item">
-            <%= link_to "Create a new article", new_article_path, class: "nav-li btn-small mb-0"%>
-          </li>
+          <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "Create a new article", new_article_path, class: "nav-li btn-small mb-0"%>
+            </li>
+          <% end %>
           <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <% if current_user.photo.attached? %>
